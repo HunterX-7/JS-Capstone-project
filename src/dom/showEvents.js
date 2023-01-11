@@ -14,16 +14,18 @@ const createEventCard = (event) => {
       <img class="card-image" src="${performerImage}" alt="${performerName}">
 
       <div class="card-title-container">
-          <h2 class="card-title">${shortTitle}</h2>
+          <h3 class="card-title">${shortTitle}</h3>
           <div class="card-like-container">
-            <ion-icon name="heart-outline"></ion-icon>
+            <button class="like-button">
+              <ion-icon name="heart-outline"></ion-icon>
+            </button>
             <span class="like-count">5 likes</span>
           </div>
       </div>
 
       <div class="card-button-container">
-          <button class="card-comments-button">Comments</button>
-          <button class="card-reserve-button">Reserve</button>
+          <button class="btn-primary">Comments</button>
+          <button class="btn-primary">Reserve</button>
       </div>
     </div>
   `;
