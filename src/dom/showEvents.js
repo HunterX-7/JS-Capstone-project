@@ -24,8 +24,8 @@ const createEventCard = (event) => {
       </div>
 
       <div class="card-button-container">
-          <button class="btn-primary">Comments</button>
-          <button class="btn-primary">Reserve</button>
+          <button class="btn btn-primary-outline">Comments</button>
+          <button class="btn btn-primary">Reserve</button>
       </div>
     </div>
   `;
