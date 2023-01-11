@@ -152,3 +152,24 @@ body {
   background: none;
   cursor: pointer;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 -2px 1px 1px rgb(214, 214, 214);
+  background-color: white;
+  text-align: center;
+}
+
+.footer-tag {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-tag:hover {
+  text-decoration: none;
+  color: rgb(214, 149, 28);
+}

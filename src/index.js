@@ -1,4 +1,4 @@
-import showEvents from './dom/showEvents.js';
+import showEvents from './modules/showEvents.js';
 import './styles/reset.css';
 import './styles/style.css';
 
