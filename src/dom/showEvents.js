@@ -1,17 +1,43 @@
 import getEvents from '../api/getEvents.js';
 
-const mainEl = document.getElementById('main');
+const eventsListEl = document.getElementById('events-list');
+
+const createEventCard = (event) => {
+  const {
+    id,
+    short_title: shortTitle,
+    performers: [{ name: performerName, image: performerImage }],
+  } = event;
+
+  const html = `
+    <div class="card" data-card=${id}>
+      <img class="card-image" src="${performerImage}" alt="${performerName}">
+
+      <div class="card-title-container">
+          <h2 class="card-title">${shortTitle}</h2>
+          <div class="card-like-container">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="like-count">5 likes</span>
+          </div>
+      </div>
+
+      <div class="card-button-container">
+          <button class="card-comments-button">Comments</button>
+          <button class="card-reserve-button">Reserve</button>
+      </div>
+    </div>
+  `;
+
+  return html;
+};
 
 const showEvents = async () => {
-  const eventsReq = await getEvents();
-  const events = eventsReq.events;
+  const eventsData = await getEvents();
+  const events = eventsData.events;
 
-  const ul = document.createElement('ul');
   events.forEach((event) => {
-    ul.innerHTML += `<li>${event.title}</li>`;
+    eventsListEl.innerHTML += createEventCard(event);
   });
-
-  mainEl.appendChild(ul);
 };
 
 export default showEvents;
