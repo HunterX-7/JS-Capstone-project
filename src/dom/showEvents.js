@@ -34,8 +34,7 @@ const createEventCard = (event) => {
 };
 
 const showEvents = async () => {
-  const eventsData = await getEvents();
-  const events = eventsData.events;
+  const { events } = await getEvents();
 
   events.forEach((event) => {
     eventsListEl.innerHTML += createEventCard(event);
