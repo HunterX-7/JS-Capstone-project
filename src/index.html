@@ -1,89 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>Event Registration</title>
-  </head>
-  <body>
-    <!-- starting the header menu -->
-    <header class="header">
-      <div class="grayband"></div>
-      <nav class="main-header">
-        <ul class="header-ul">
-          <li class="header-li">
-            <a class="header-li-item" href="#" id="logo">SEAT GEEK</a>
-          </li>
-          <li class="header-li">
-            <a class="header-li-item" href="#" id="">Home</a>
-          </li>
-          <li class="header-li">
-            <a class="header-li-item" href="#" id="">Page</a>
-          </li>
-          <li class="header-li">
-            <a class="header-li-item" href="#" id="">Program</a>
-          </li>
-          <li class="header-li">
-            <a class="header-li-item" href="#" id="">About</a>
-          </li>
-          <li class="header-li">
-            <a class="header-li-item signinBtn" href="#" id="">Sign in</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
 
-    <!-- main content -->
-    <main id="main">
-      <div class="container">
-        <div id="events-list"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title>Event Registration</title>
+</head>
+
+<body>
+  <!-- starting the header menu -->
+  <header class="header">
+    <div class="grayband"></div>
+    <nav class="main-header">
+      <ul class="header-ul">
+        <li class="header-li">
+          <a class="header-li-item" href="#" id="logo">SEAT GEEK</a>
+        </li>
+        <li class="header-li">
+          <a class="header-li-item" href="#" id="">Home</a>
+        </li>
+        <li class="header-li">
+          <a class="header-li-item" href="#" id="">Page</a>
+        </li>
+        <li class="header-li">
+          <a class="header-li-item" href="#" id="">Program</a>
+        </li>
+        <li class="header-li">
+          <a class="header-li-item" href="#" id="">About</a>
+        </li>
+        <li class="header-li">
+          <a class="header-li-item signinBtn" href="#" id="">Sign in</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <main id="main">
+    <div class="container">
+      <div id="events-list"></div>
+    </div>
+  </main>
+
+  <!-- comment modal -->
+  <!-- modal  -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <div class="card-preview-header">
+        <h3>Event Details</h3>
+        <span class="close">&times;</span>
       </div>
-    </main>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer-bottom">
-        <strong>
-          <p>
-            Copyright &copy;2023 SEAT GEEK. Designed by
-            <span>
-              <a
-                href="https://github.com/chiztechnology"
-                target="_blank"
-                class="footer-tag"
-                >@chiztechnology</a
-              >
-              |
-              <a
-                href="https://github.com/rashedarman"
-                target="_blank"
-                class="footer-tag"
-                >@rashedarman</a
-              >
-              |
-              <a
-                href="https://github.com/HunterX-7"
-                target="_blank"
-                class="footer-tag"
-                >@HunterX-7</a
-              >
-            </span>
-          </p>
-        </strong>
+      <img src="https://seatgeek.com/images/performers-landscape/lao-tizer-141547/146635/huge.jpg"
+        class="popup-img-preview" alt="Image cover">
+      <h2 class="work-title-preview">Event name</h2>
+      <div class="description-popup">
+        <div class="primaryInfo">
+          <h3>Date : 23/10/2019</h3>
+          <h3>Ticket : 120 USD</h3>
+        </div>
+        <div class="detailInfo">
+          <h3>Time: 7 PM</h3>
+          <h3>Notice: Wear your mask</h3>
+        </div>
       </div>
-      <div class="grayband"></div>
-    </footer>
+      <div class="article-content">
+        <div class="comments-container">
+          <div class="comment-list">
+            <h3>Comments (4)</h3>
+            <!-- comments -->
+            <h4 class="comment-item">Comment 1 : "Welcome dear"</h4>
+            <h4 class="comment-item">Comment 1 : "Welcome dear"</h4>
+            <h4 class="comment-item">Comment 1 : "Welcome dear"</h4>
+          </div>
+          <hr>
+          <form action="" id="add-comment">
+            <h2>Add Comment</h2>
+            <label for="">Your name</label>
+            <div>
+              <input type="text" name="name" required>
+            </div>
+            <label for="">Your insights</label>
+            <div>
+              <textarea name="insights" id="" cols="30" rows="3"></textarea>
+            </div>
+            <input type="submit" name="comment" id="comment-btn" value="Post your Comment">
+          </form>
+        </div>
+      </div>
 
-    <!-- Ionicons  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+    </div>
+  </div>
+  <!-- end of modal -->
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <strong>
+        <p>
+          Copyright &copy;2023 SEAT GEEK. Designed by
+          <span>
+            <a href="https://github.com/chiztechnology" target="_blank" class="footer-tag">@chiztechnology</a>
+            |
+            <a href="https://github.com/rashedarman" target="_blank" class="footer-tag">@rashedarman</a>
+            |
+            <a href="https://github.com/HunterX-7" target="_blank" class="footer-tag">@HunterX-7</a>
+          </span>
+        </p>
+      </strong>
+    </div>
+    <div class="grayband"></div>
+  </footer>
+
+  <!-- Ionicons  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
