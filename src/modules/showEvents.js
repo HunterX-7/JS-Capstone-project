@@ -19,7 +19,9 @@ const createEventCard = (event) => {
             <button class="like-button">
               <ion-icon name="heart-outline"></ion-icon>
             </button>
-            <span class="like-count">5 likes</span>
+            <p>
+              <span class="like-count">0</span> Likes
+            </p>
           </div>
       </div>
 
