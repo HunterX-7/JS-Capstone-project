@@ -1,4 +1,4 @@
-import { APP_ID } from '../config';
+import { APP_ID } from '../config.js';
 
 const baseUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${APP_ID}/likes`;
 
