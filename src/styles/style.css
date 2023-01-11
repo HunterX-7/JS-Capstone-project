@@ -10,6 +10,8 @@ body {
   position: fixed;
   width: 100%;
   background-color: #fff;
+  top: 0;
+  left: 0;
 }
 
 .grayband {
@@ -62,4 +64,8 @@ body {
   background-color: rgb(214, 149, 28);
   padding: 10px;
   border-radius: 3px;
+}
+
+#main {
+  margin-top: 5rem; /* fixed height of the nav */
 }
