@@ -66,7 +66,7 @@ function showModal(obj) {
       <h2 class="work-title-preview">${shortTitle}</h2>
       <div class="description-popup">
         <div class="primaryInfo">
-          <h3>Date : ${dateEvent}</h3>
+          <h3>Date : ${new Date(dateEvent).toLocaleString()}</h3>
           <h3>Type : ${type}</h3>
         </div>
         <div class="detailInfo">
