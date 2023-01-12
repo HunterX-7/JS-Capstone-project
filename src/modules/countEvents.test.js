@@ -21,7 +21,7 @@ describe('Count Events', () => {
   test('Count number of events on the page', () => {
     const container = document.getElementById(eventsListId);
     const cards = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i += 1) {
       const card = document.createElement('div');
       card.className = 'card';
       container.appendChild(card);
