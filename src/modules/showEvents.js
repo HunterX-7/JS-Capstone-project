@@ -25,7 +25,7 @@ const createEventCard = (event) => {
 
       <div class="card-button-container">
           <button class="btn btn-primary-outline">Comments</button>
-          <button class="btn btn-primary">Reserve</button>
+          <a class="btn btn-primary" href="#popup1">Reserve</a>
       </div>
     </div>
   `;
