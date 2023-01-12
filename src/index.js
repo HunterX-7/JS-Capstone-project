@@ -10,14 +10,12 @@ const eventsList = document.getElementById('events-list');
 // NOTE: load all the events first
 document.addEventListener('DOMContentLoaded', showEvents);
 
-
 // TODO: might want to render likes along with events
 // because like count blinks otherwise
 getLikes().then((likes) => {
-    showLikesDom(likes);
+  showLikesDom(likes);
 });
 
 eventsList.addEventListener('click', (e) => {
-    if (e.target.matches('.fa-heart')) addLikeDom(e);
+  if (e.target.matches('.fa-heart')) addLikeDom(e);
 });
-

@@ -36,35 +36,12 @@ const createEventCard = (event) => {
   return html;
 };
 
-const showEvents = async () => {
-  const { events } = await getEvents();
-  events.forEach((event) => {
-    eventsListEl.innerHTML += createEventCard(event);
-  });
-
-
-  // modal popup operations (comment)
-  const previewBtn = document.querySelectorAll('.comment-btn');
-
-  previewBtn.forEach((node) => {
-    document.getElementById(node.id).addEventListener('click', async () => {
-      // pass objects to the modal
-      const event = await getEventDetails(node.id);
-      showModal(event);
-    });
-  });
-};
-
-let wrapper = null;
-
 function showModal(obj) {
-
   const {
-    id,
     short_title: shortTitle,
-    performers: [{ name: performerName, image: performerImage }],
-    type: type,
-    datetime_local: date_event,
+    performers: [{ image: performerImage }],
+    type,
+    datetime_local: dateEvent,
     popularity,
     score,
 
@@ -88,7 +65,7 @@ function showModal(obj) {
       <h2 class="work-title-preview">${shortTitle}</h2>
       <div class="description-popup">
         <div class="primaryInfo">
-          <h3>Date : ${date_event}</h3>
+          <h3>Date : ${dateEvent}</h3>
           <h3>Type : ${type}</h3>
         </div>
         <div class="detailInfo">
@@ -142,4 +119,24 @@ function showModal(obj) {
   };
 }
 
-export default showEvents;
+const showEvents = async () => {
+  const { events } = await getEvents();
+  events.forEach((event) => {
+    eventsListEl.innerHTML += createEventCard(event);
+  });
+
+  // modal popup operations (comment)
+  const previewBtn = document.querySelectorAll('.comment-btn');
+
+  previewBtn.forEach((node) => {
+    document.getElementById(node.id).addEventListener('click', async () => {
+      // pass objects to the modal
+      const event = await getEventDetails(node.id);
+      showModal(event);
+    });
+  });
+};
+
+let wrapper = null;
+
+export default showEvents
