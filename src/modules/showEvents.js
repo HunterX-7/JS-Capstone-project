@@ -20,7 +20,7 @@ const createEventCard = (event) => {
               <i class="fa-regular fa-heart"></i>
             </button>
             <p>
-              <span class="like-count">5</span> Likes
+              <span class="like-count">0</span> Likes
             </p>
           </div>
       </div>
