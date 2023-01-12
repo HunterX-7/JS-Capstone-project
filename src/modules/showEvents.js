@@ -35,6 +35,7 @@ const createEventCard = (event) => {
 
   return html;
 };
+let wrapper = null;
 
 function showModal(obj) {
   const {
@@ -48,7 +49,7 @@ function showModal(obj) {
   } = obj;
 
   if (wrapper !== null) {
-    document.body.removeChild(wrapper);;
+    document.body.removeChild(wrapper);
   }
   // clicked
   wrapper = document.createElement('div');
@@ -137,6 +138,4 @@ const showEvents = async () => {
   });
 };
 
-let wrapper = null;
-
-export default showEvents
+export default showEvents;
