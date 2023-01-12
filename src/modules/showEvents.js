@@ -42,28 +42,28 @@ const showEvents = async () => {
   });
 
 
-// modal popup operations (comment)
-const previewBtn = document.querySelectorAll('.comment-btn');
+  // modal popup operations (comment)
+  const previewBtn = document.querySelectorAll('.comment-btn');
 
-previewBtn.forEach((node) => {
-  document.getElementById(node.id).addEventListener('click', async () => {
-    // pass objects to the modal
-    const event = await getEventDetails(node.id);
-    showModal(event);
+  previewBtn.forEach((node) => {
+    document.getElementById(node.id).addEventListener('click', async () => {
+      // pass objects to the modal
+      const event = await getEventDetails(node.id);
+      showModal(event);
+    });
   });
-});
 };
 
 let wrapper = null;
 
-function showModal(obj){
+function showModal(obj) {
 
   const {
     id,
     short_title: shortTitle,
     performers: [{ name: performerName, image: performerImage }],
-    type : type,
-    datetime_local : date_event,
+    type: type,
+    datetime_local: date_event,
     popularity,
     score,
 
