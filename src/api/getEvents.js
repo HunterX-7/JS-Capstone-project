@@ -10,4 +10,5 @@ const getEvents = async () => {
   return response.json();
 };
 
+
 export default getEvents;

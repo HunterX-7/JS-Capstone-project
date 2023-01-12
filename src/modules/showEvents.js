@@ -1,3 +1,4 @@
+import getEventDetails from '../api/getEventDetails.js';
 import getEvents from '../api/getEvents.js';
 
 const eventsListEl = document.getElementById('events-list');
@@ -10,7 +11,7 @@ const createEventCard = (event) => {
   } = event;
 
   const html = `
-    <div class="card" data-card=${id} id="${id}">
+    <div class="card" data-card=${id}>
       <img class="card-image" src="${performerImage}" alt="${performerName}">
 
       <div class="card-title-container">
@@ -24,7 +25,7 @@ const createEventCard = (event) => {
       </div>
 
       <div class="card-button-container">
-          <button class="btn btn-primary-outline comment-btn">Comments</button>
+          <button class="btn btn-primary-outline comment-btn" id="${id}">Comments</button>
           <button class="btn btn-primary">Reserve</button>
       </div>
     </div>
@@ -39,9 +40,20 @@ const showEvents = async () => {
   events.forEach((event) => {
     eventsListEl.innerHTML += createEventCard(event);
   });
+
+
+// modal popup operations (comment)
+const previewBtn = document.querySelectorAll('.comment-btn');
+
+previewBtn.forEach((node) => {
+  document.getElementById(node.id).addEventListener('click', async () => {
+    // pass objects to the modal
+    const event = await getEventDetails(node.id);
+    showModal(event);
+  });
+});
 };
 
-const previewBtn = document.querySelectorAll('.comment-btn');
 let wrapper = null;
 
 function showModal(obj){
@@ -50,6 +62,11 @@ function showModal(obj){
     id,
     short_title: shortTitle,
     performers: [{ name: performerName, image: performerImage }],
+    type : type,
+    datetime_local : date_event,
+    popularity,
+    score,
+
   } = obj;
 
   if (wrapper !== null) {
@@ -70,12 +87,12 @@ function showModal(obj){
       <h2 class="work-title-preview">${shortTitle}</h2>
       <div class="description-popup">
         <div class="primaryInfo">
-          <h3>Date : 23/10/2019</h3>
-          <h3>Ticket : 120 USD</h3>
+          <h3>Date : ${date_event}</h3>
+          <h3>Type : ${type}</h3>
         </div>
         <div class="detailInfo">
-          <h3>Time: 7 PM</h3>
-          <h3>Notice: Wear your mask</h3>
+          <h3>Popularity: ${popularity}</h3>
+          <h3>Score : ${score}</h3>
         </div>
       </div>
       <div class="article-content">
@@ -123,15 +140,5 @@ function showModal(obj){
     }
   };
 }
-
-
-previewBtn.forEach((node) => {
-  document.getElementById(node.id).addEventListener('click', async () => {
-    // pass objects to the modal
-    const { event } = await getEvents();
-    showModal(event);
-  });
-});
-
 
 export default showEvents;
