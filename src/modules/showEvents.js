@@ -17,9 +17,11 @@ const createEventCard = (event) => {
           <h3 class="card-title">${shortTitle}</h3>
           <div class="card-like-container">
             <button class="like-button">
-              <ion-icon name="heart-outline"></ion-icon>
+              <i class="fa-regular fa-heart"></i>
             </button>
-            <span class="like-count">5 likes</span>
+            <p>
+              <span class="like-count">0</span> Likes
+            </p>
           </div>
       </div>
 
@@ -35,7 +37,6 @@ const createEventCard = (event) => {
 
 const showEvents = async () => {
   const { events } = await getEvents();
-
   events.forEach((event) => {
     eventsListEl.innerHTML += createEventCard(event);
   });
