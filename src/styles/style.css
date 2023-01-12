@@ -140,25 +140,28 @@ body {
 
 .card-like-container {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   margin: 0.5rem 0;
 }
 
 .like-button {
+  color: var(--clr-primary);
   font-size: 20px;
   padding: 0;
   border: 0;
   outline: none;
   background: none;
   cursor: pointer;
+  transition: 0.2s transform;
+}
+
+.like-button:hover {
+  transform: scale(1.1);
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  height: 60px;
   box-shadow: 0 -2px 1px 1px rgb(214, 214, 214);
   background-color: white;
   text-align: center;
