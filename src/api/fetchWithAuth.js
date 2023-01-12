@@ -10,6 +10,8 @@ const fetchWithAuth = async (endpoint, options = {}) => {
   const params = new URLSearchParams();
   params.set('client_id', CLIENT_ID);
   params.set('client_secret', CLIENT_SECRET);
+
+  // OPTIONAL: limit result set
   params.set('per_page', pageLimit);
 
   const url = `${baseUrl}/${endpoint}?${params.toString()}`;
