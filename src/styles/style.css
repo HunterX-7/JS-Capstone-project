@@ -127,6 +127,11 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.events-count-title {
+  text-align: center;
+  margin-top: 3em;
+}
+
 .card {
   display: flex;
   flex-direction: column;
