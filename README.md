@@ -20,7 +20,6 @@
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ ](#faq)
 - [📝 License](#license)
 
@@ -31,6 +30,8 @@
 **EventHub** is a single page web application that allows users to view and interact with upcoming events.
 
  <img src="./app-demo.png" alt="app-demo" />
+
+ </br>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,6 +59,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://example.com)
+- [Video presentation](https://drive.google.com/file/d/1HM-Xi3iKlr4Sg8hfnutWkcRTyrSiGWf8/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,83 +67,53 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- NPM installed locally
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+git clone git@github.com:HunterX-7:JS-Capstone-project
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
-  gem install
+npm install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
-  rails server
+npm run start
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
 ```sh
-  bin/rails test test/models/article_test.rb
+npm run test
 ```
---->
 
 ### Deployment
 
-You can deploy this project using:
-
-<!--
-Example:
+Build the project:
 
 ```sh
-
+npm run build
 ```
- -->
+
+Deploy it to Vercel or Netlify
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,11 +145,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] Prevent multiple likes from same user
+- [ ] Redesign popup modals
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,15 +164,13 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+I really enjoyed working on this project. If you like it show your support by giving a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 
 - **Where do I get API keys?**
   - This project uses [Seat Geek](https://platform.seatgeek.com/)
