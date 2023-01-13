@@ -8,14 +8,17 @@
     "build": "webpack --mode=production",
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:js": "eslint . --ext .js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "babel-eslint": "10.x",
+    "babel-jest": "^29.3.1",
     "css-loader": "^6.7.3",
     "eslint": "7.x",
     "eslint-config-airbnb-base": "14.x",

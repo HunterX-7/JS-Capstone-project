@@ -31,7 +31,7 @@ describe('Count Events', () => {
   });
 
   test('Defaults to 0 when there are no events', () => {
-    const container = document.getElementById('event-list');
+    const container = document.getElementById(eventsListId);
     const someElement = document.createElement('div');
     container.appendChild(someElement);
     expect(countEvents()).toBe(0);
