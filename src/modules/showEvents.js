@@ -38,6 +38,15 @@ const createEventCard = (event) => {
 };
 let wrapper = null;
 
+let displayComment = (obj) => {
+  let str = '';
+  obj.length && obj.forEach((comment) => {
+    str += `<h4 class="comment-item"> ${comment.username} : "${comment.comment}"</h4>`;
+  });
+
+  return str;
+}
+
 function showModal(obj, comments) {
   const {
     id,
@@ -50,7 +59,7 @@ function showModal(obj, comments) {
 
   } = obj;
 
-  if (comments === undefined){
+  if (comments === undefined) {
     comments = []
   }
 
@@ -83,12 +92,9 @@ function showModal(obj, comments) {
       <div class="article-content">
         <div class="comments-container">
           <div class="comment-list">
-            <h3>Comments (${comments && comments.length})</h3>
+            <h3>Comments (<span id="commentCount">${comments.length || 0}</span>)</h3>
             <!-- comments -->
-            ${comments !=null && comments.map(comment=>{
-              return (`<h4 class="comment-item"> ${comment.username} : "${comment.comment}"</h4>`);
-            })}
-            
+            ${displayComment(comments)}
           </div>
           <hr>
           <form  id="add-comment" class = "submit-comment">
@@ -134,16 +140,14 @@ function showModal(obj, comments) {
     let itemId = document.getElementById('item_id').value;
     let username = document.getElementById('name').value;
     let comment = document.getElementById('comment').value;
-    console.log(itemId, username, comment);
-    addComment(itemId, username, comment).then((status)=>{
-        // alert('comment posted successfully');
-       if(status === true){
-        document.getElementById('name').value = '';
-        document.getElementById('comment').value = '';
-        document.querySelector('.comment-list').innerHTML+=`<h4 class="comment-item"> ${username} : "${comment}"</h4>`
-       }else{
-        // comment failed
-       }
+    addComment(itemId, username, comment).then((status) => {
+      // alert('comment posted successfully');
+      document.getElementById('name').value = '';
+      document.getElementById('comment').value = '';
+      document.querySelector('.comment-list').innerHTML += `<h4 class="comment-item"> ${username} : "${comment}"</h4>`
+      // update comment counter
+      let val = parseInt(document.getElementById('commentCount').innerText) + 1;
+      document.getElementById('commentCount').innerText = val;
     });
 
     e.preventDefault();
@@ -163,9 +167,7 @@ const showEvents = async () => {
     document.getElementById(node.id).addEventListener('click', async () => {
       // pass objects to the modal
       const event = await getEventDetails(node.id);
-      console.log(node.id);
       const comments = await fetchComments(node.id);
-      console.log('comments:::',comments);
       showModal(event, comments);
     });
   });

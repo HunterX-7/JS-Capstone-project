@@ -10,4 +10,4 @@ export const addComment = (item_Id, username, comment) => fetch(baseUrl, {
 
 
 
-export const fetchComments = (itemId) => fetch(`${baseUrl}?item_id=${itemId}`).then((response) =>{response.json(); console.log(response);});
+export const  fetchComments = (itemId) => fetch(baseUrl + '?item_id=' + itemId).then((response) => response.json());
