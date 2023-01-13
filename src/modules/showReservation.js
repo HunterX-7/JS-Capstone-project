@@ -1,4 +1,4 @@
-import { getReservations } from "../api/reservationsApi.js";
+import { getReservations } from '../api/reservationsApi.js';
 
 const showReservation = async (obj, id) => {
   const {
@@ -15,12 +15,10 @@ const showReservation = async (obj, id) => {
 
   const reserData = await getReservations(id);
   let reserDates = '';
-  console.log(reserData)
 
-  reserData.forEach(element => {
-    reserDates+=`<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`
+  reserData.forEach((element) => {
+    reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
   });
-  console.log(reserDates)
 
   const div = document.createElement('div');
   div.className = 'popup';

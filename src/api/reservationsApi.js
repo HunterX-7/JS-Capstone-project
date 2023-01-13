@@ -9,10 +9,11 @@ export const addReservations = (itemId, userId, dateStart, dateEnd) => fetch(bas
     item_id: itemId,
     username: userId,
     date_start: dateStart,
-    date_end: dateEnd
-}),
+    date_end: dateEnd,
+  }),
 }).then((response) => response.ok);
 
-const getBaseUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${APP_ID}/reservations?item_id=`;
+const getBaseUrl = `${baseUrl}?item_id=`;
 
-export const getReservations = async (id) => fetch(getBaseUrl+id).then((response) => response.json());
+export const getReservations = async (id) => fetch(getBaseUrl + id)
+  .then((response) => response.json());
