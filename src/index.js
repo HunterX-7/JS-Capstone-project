@@ -1,3 +1,4 @@
+import { addComment } from './api/commentAPI.js';
 import { getLikes } from './api/likesApi.js';
 import addLikeDom from './modules/addLikeDom.js';
 import showEvents from './modules/showEvents.js';
