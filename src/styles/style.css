@@ -117,7 +117,7 @@ body {
 }
 
 #main {
-  margin-top: 5rem; /* fixed height of the nav */
+  margin-top: 5rem;
 }
 
 #events-list {
@@ -187,7 +187,87 @@ body {
   color: rgb(214, 149, 28);
 }
 
-/* Reservation Popup */
+/* modal and Reservation Popup window */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px 10px 10px 10px;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 520px;
+  height: auto;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 0;
+}
+
+.card-preview-header {
+  width: 505px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.popup-img-preview {
+  margin: 10px;
+}
+
+.work-title-preview {
+  margin: 10px;
+}
+
+.description-popup {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#comment-btn {
+  background-color: rgb(214, 149, 28);
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment-list {
+  padding-bottom: 20px;
+}
+
+.article-content {
+  padding: 10px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .popup {
   position: fixed;
