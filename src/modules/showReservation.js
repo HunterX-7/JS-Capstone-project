@@ -1,24 +1,34 @@
-function showReservation() {
-const div = document.createElement('div');
-div.className = 'popup';
-div.setAttribute('id', 'popup1');
-div.innerHTML = `
+const showReservation = (obj) => {
+  const {
+    short_title: shortTitle,
+    performers: [{ image: performerImage }],
+    type: tipo,
+    datetime_local: dateEvent,
+    venue: { city: ciudad, country: pais, state: estado },
+    stats: { average_price: precio },
+  } = obj;
+
+  const div = document.createElement('div');
+  div.className = 'popup';
+  div.setAttribute('id', 'popup1');
+  div.innerHTML = `
                 <div class="popup-wrap">
-                <h2>Reserve Now</h2><a href="#" class="close">&times;</a>
+                <h2>Reserve Now</h2>
+                <a href="#" class="close" onclick="this.parentElement.parentElement.remove()" >&times;</a>
                 <div class="content">
                 <div class="container-f">
                     <div class="img-thumb">
-                    <img src="https://seatgeek.com/images/performers-landscape/lao-tizer-141547/146635/huge.jpg" alt="Event Image">
+                    <img src="${performerImage}" alt="Event Image">
                     </div>
                     <div class="details">
-                    <h2>Event: Name</h2>
+                    <h2>${shortTitle}</h2>
                     <div class="e-details">
-                        <p>A: Details</p>
-                        <p>B: Details</p>
+                        <p>Type: ${tipo}</p>
+                        <p>Date: ${dateEvent}</p>
                     </div>
                     <div class="e-details">
-                        <p>C: Details</p>
-                        <p>D: Details</p>
+                        <p>Address: ${pais}, ${estado}, ${ciudad}</p>
+                        <p>Price: ${precio}$</p>
                     </div>
                     </div>
                     <div class="counter">
@@ -42,7 +52,11 @@ div.innerHTML = `
                 </div>
                 </div>
                 `;
-        return div;
-}
+  div.classList.add('popup-visible');
+  const bodyElem = document.getElementById('body');
+  const footerElem = document.getElementById('footer');
+
+  bodyElem.insertBefore(div, footerElem);
+};
 
 export default showReservation;

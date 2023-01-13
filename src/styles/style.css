@@ -188,7 +188,7 @@ body {
   overflow: scroll;
 }
 
-.popup:target {
+.popup-visible {
   visibility: visible;
   opacity: 1;
 }
@@ -233,7 +233,11 @@ body {
 
 .popup-wrap .e-details {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.popup-wrap .details {
+  padding: 5px;
 }
 
 .reservations-p {
