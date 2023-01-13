@@ -1,6 +1,7 @@
 import { addComment, fetchComments } from '../api/commentAPI.js';
 import getEventDetails from '../api/getEventDetails.js';
 import getEvents from '../api/getEvents.js';
+import showResPop from './showResPop.js';
 
 const eventsListEl = document.getElementById('events-list');
 
@@ -29,7 +30,7 @@ const createEventCard = (event) => {
 
       <div class="card-button-container">
           <button class="btn btn-primary-outline comment-btn" id="${id}">Comments</button>
-          <button class="btn btn-primary">Reserve</button>
+          <button class="btn btn-primary reserve-btn" id="${id}">Reserve</button>
       </div>
     </div>
   `;
@@ -171,6 +172,7 @@ const showEvents = async () => {
       showModal(event, comments);
     });
   });
+  showResPop();
 };
 
 

@@ -187,6 +187,8 @@ body {
   color: rgb(214, 149, 28);
 }
 
+
+/* Reservation Popup */
 /* modal (popup window */
 
 .modal {
@@ -267,4 +269,113 @@ body {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+  
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  overflow: scroll;
+}
+
+.popup-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-wrap {
+  margin: 70px auto;
+  padding: 20px;
+  background: lightgray;
+  border-radius: 4px;
+  width: 40%;
+  position: relative;
+}
+
+.popup-wrap h2 {
+  color: black;
+}
+
+.popup-wrap .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.popup-wrap .close:hover {
+  color: rgb(214, 149, 28);
+}
+
+.popup-wrap .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.popup-wrap .img-thumb {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-wrap .e-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-wrap .details {
+  padding: 5px;
+}
+
+.reservations-p {
+  text-align: center;
+}
+
+/* formulario */
+
+.form-f {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-f {
+  background-color: lightgray;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.form-f label {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.form-f input[type=text],
+select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.form-f input[type='submit'] {
+  background-color: rgb(214, 149, 28);
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
