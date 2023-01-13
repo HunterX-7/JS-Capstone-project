@@ -1,4 +1,6 @@
-const showReservation = (obj) => {
+import { getReservations } from "../api/reservationsApi.js";
+
+const showReservation = async (obj, id) => {
   const {
     short_title: shortTitle,
     performers: [{ image: performerImage }],
