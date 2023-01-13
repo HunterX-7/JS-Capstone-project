@@ -12,13 +12,18 @@ const showReservation = async (obj, id) => {
       postal_code: poCode,
     },
   } = obj;
-
-  const reserData = await getReservations(id);
+  
   let reserDates = '';
 
-  reserData.forEach((element) => {
-    reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
-  });
+  const reserData = await getReservations(id);
+
+  if (reserData.error === undefined) {
+
+    reserData.forEach((element) => {
+      reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
+    });
+    console.log(reserData);
+  }
 
   const div = document.createElement('div');
   div.className = 'popup';
@@ -56,7 +61,7 @@ const showReservation = async (obj, id) => {
                     <input type="text" placeholder="Start date..." name="" id="start">
                     <label>End</label>
                     <input type="text" placeholder="End date..." name="" id="end">
-                    <button type="button" onclick="postReserve(${id})">Reserve Now</button>
+                    <button class="btn btn-primary" type="button" onclick="postReserve(${id})">Reserve Now</button>
                     </div>
                 </div>
                 </div>
