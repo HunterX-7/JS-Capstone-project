@@ -1,6 +1,7 @@
 import { addComment, fetchComments } from '../api/commentAPI.js';
 import getEventDetails from '../api/getEventDetails.js';
 import getEvents from '../api/getEvents.js';
+import showResPop from './showResPop.js';
 
 const eventsListEl = document.getElementById('events-list');
 
@@ -29,7 +30,7 @@ const createEventCard = (event) => {
 
       <div class="card-button-container">
           <button class="btn btn-primary-outline comment-btn" id="${id}">Comments</button>
-          <button class="btn btn-primary">Reserve</button>
+          <button class="btn btn-primary reserve-btn" id="${id}">Reserve</button>
       </div>
     </div>
   `;
@@ -38,14 +39,14 @@ const createEventCard = (event) => {
 };
 let wrapper = null;
 
-let displayComment = (obj) => {
+const displayComment = (obj) => {
   let str = '';
   obj.length && obj.forEach((comment) => {
     str += `<h4 class="comment-item"> ${comment.username} : "${comment.comment}"</h4>`;
   });
 
   return str;
-}
+};
 
 function showModal(obj, comments) {
   const {
@@ -60,7 +61,7 @@ function showModal(obj, comments) {
   } = obj;
 
   if (comments === undefined) {
-    comments = []
+    comments = [];
   }
 
   if (wrapper !== null) {
@@ -137,16 +138,16 @@ function showModal(obj, comments) {
   document.getElementById('add-comment').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let itemId = document.getElementById('item_id').value;
-    let username = document.getElementById('name').value;
-    let comment = document.getElementById('comment').value;
-    addComment(itemId, username, comment).then((status) => {
+    const itemId = document.getElementById('item_id').value;
+    const username = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+    addComment(itemId, username, comment).then(() => {
       // alert('comment posted successfully');
       document.getElementById('name').value = '';
       document.getElementById('comment').value = '';
-      document.querySelector('.comment-list').innerHTML += `<h4 class="comment-item"> ${username} : "${comment}"</h4>`
+      document.querySelector('.comment-list').innerHTML += `<h4 class="comment-item"> ${username} : "${comment}"</h4>`;
       // update comment counter
-      let val = parseInt(document.getElementById('commentCount').innerText) + 1;
+      const val = parseInt(document.getElementById('commentCount').innerText) + 1;
       document.getElementById('commentCount').innerText = val;
     });
 
@@ -171,6 +172,7 @@ const showEvents = async () => {
       showModal(event, comments);
     });
   });
+  showResPop();
 };
 
 export default showEvents;
