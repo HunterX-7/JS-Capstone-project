@@ -173,5 +173,4 @@ const showEvents = async () => {
   });
 };
 
-
 export default showEvents;
