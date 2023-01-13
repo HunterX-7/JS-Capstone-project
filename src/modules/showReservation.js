@@ -51,12 +51,12 @@ const showReservation = async (obj, id) => {
                     </div>
                     <div class="form-f">
                     <label>Name</label>
-                    <input type="text" placeholder="Your name..." name="" id="">
+                    <input type="text" placeholder="Your name..." name="" id="name-reserve">
                     <label>Start</label>
-                    <input type="text" placeholder="Start date..." name="" id="">
+                    <input type="text" placeholder="Start date..." name="" id="start">
                     <label>End</label>
-                    <input type="text" placeholder="End date..." name="" id="">
-                    <input type="submit" value="Reserve">
+                    <input type="text" placeholder="End date..." name="" id="end">
+                    <button type="button" onclick="postReserve(${id})">Reserve Now</button>
                     </div>
                 </div>
                 </div>
