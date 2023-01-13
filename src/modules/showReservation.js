@@ -2,10 +2,13 @@ const showReservation = (obj) => {
   const {
     short_title: shortTitle,
     performers: [{ image: performerImage }],
-    type: tipo,
     datetime_local: dateEvent,
-    venue: { city: ciudad, country: pais, state: estado },
-    stats: { average_price: precio },
+    venue: {
+      city: cityLocation,
+      country: countryLocation,
+      name: nameStage,
+      postal_code: poCode,
+    },
   } = obj;
 
   const div = document.createElement('div');
@@ -23,12 +26,12 @@ const showReservation = (obj) => {
                     <div class="details">
                     <h2>${shortTitle}</h2>
                     <div class="e-details">
-                        <p>Type: ${tipo}</p>
-                        <p>Date: ${dateEvent}</p>
+                        <p>Country: ${countryLocation}</p>
+                        <p>Date: ${new Date(dateEvent).toLocaleString()}</p>
                     </div>
                     <div class="e-details">
-                        <p>Address: ${pais}, ${estado}, ${ciudad}</p>
-                        <p>Price: ${precio}$</p>
+                        <p>Address: ${cityLocation}, ${nameStage}</p>
+                        <p>Estimated capacity: ${poCode}</p>
                     </div>
                     </div>
                     <div class="counter">
