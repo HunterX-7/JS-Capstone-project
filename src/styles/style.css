@@ -187,9 +187,7 @@ body {
   color: rgb(214, 149, 28);
 }
 
-
-/* Reservation Popup */
-/* modal (popup window */
+/* modal and Reservation Popup window */
 
 .modal {
   display: none;

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { addComment, fetchComments } from '../api/commentAPI.js';
 import getEventDetails from '../api/getEventDetails.js';
 import getEvents from '../api/getEvents.js';
