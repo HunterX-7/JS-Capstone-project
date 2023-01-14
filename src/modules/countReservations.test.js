@@ -21,4 +21,12 @@ describe('ReservationCounter', () => {
       const resComments = document.getElementById('reserCounter');
       expect(resComments.innerHTML).toStrictEqual('5');
     });
+    test('pokeCounter.innerText is equals to 0', () => {
+        document.body.innerHTML = '<div><div id="divReservation"></div><span id="reserCounter"></span></div>';
+    
+        countReservation();
+    
+        const resCommentsZero = document.getElementById('reserCounter');
+        expect(resCommentsZero.innerHTML).toStrictEqual('0');
+      });
   });
