@@ -7,7 +7,7 @@ const showResPop = () => {
   testReserv.forEach((element) => {
     element.addEventListener('click', async () => {
       const event = await getEventDetails(element.id);
-      showReservation(event);
+      showReservation(event, element.id);
     });
   });
 };

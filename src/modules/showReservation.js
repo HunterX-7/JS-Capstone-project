@@ -1,4 +1,6 @@
-const showReservation = (obj) => {
+import { getReservations } from '../api/reservationsApi.js';
+
+const showReservation = async (obj, id) => {
   const {
     short_title: shortTitle,
     performers: [{ image: performerImage }],
@@ -10,6 +12,13 @@ const showReservation = (obj) => {
       postal_code: poCode,
     },
   } = obj;
+
+  const reserData = await getReservations(id);
+  let reserDates = '';
+
+  reserData.forEach((element) => {
+    reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
+  });
 
   const div = document.createElement('div');
   div.className = 'popup';
@@ -37,9 +46,7 @@ const showReservation = (obj) => {
                     <div class="counter">
                     <h3> Reservations (3)</h3>
                     <div class="reservations-p">
-                        <p>03/11/21 - 03/12/21 by Alex</p>
-                        <p>03/14/21 - 03/15/21 by Anna</p>
-                        <p>03/18/21 - 03/19/21 by Atem</p>
+                        ${reserDates}
                     </div>
                     </div>
                     <div class="form-f">
