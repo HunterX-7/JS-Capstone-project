@@ -65,9 +65,8 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Video Presentation <a name="live-demo"></a>
 
-- [Live Demo Link](https://example.com)
 - [Video presentation](https://drive.google.com/file/d/1HM-Xi3iKlr4Sg8hfnutWkcRTyrSiGWf8/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -156,6 +155,7 @@ Deploy it to Vercel or Netlify
 
 - [ ] Prevent multiple likes from same user
 - [ ] Redesign popup modals
+- [ ] Deploy site
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +165,7 @@ Deploy it to Vercel or Netlify
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/HunterX-7/JS-Capstone-project/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
