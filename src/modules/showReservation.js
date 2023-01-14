@@ -47,7 +47,7 @@ const showReservation = async (obj, id) => {
                     </div>
                     </div>
                     <div class="counter">
-                    <h3> Reservations (3)</h3>
+                    <h3> Reservations (<span id="reserCounter">0</span>)</h3>
                     <div class="reservations-p" id="divReservation">
                         ${reserDates}
                     </div>
