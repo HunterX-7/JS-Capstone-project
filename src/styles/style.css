@@ -258,8 +258,9 @@ body {
   padding: 5px;
 }
 
-.reservations-p {
+.reservations-p p {
   text-align: center;
+  font-style: oblique;
 }
 
 /* formulario */

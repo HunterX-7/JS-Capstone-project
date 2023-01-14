@@ -38,12 +38,12 @@ const showReservation = async (obj, id) => {
                     <div class="details">
                     <h2>${shortTitle}</h2>
                     <div class="e-details">
-                        <p>Country: ${countryLocation}</p>
-                        <p>Date: ${new Date(dateEvent).toLocaleString()}</p>
+                        <p><strong>Country:</strong> ${countryLocation}</p>
+                        <p><strong>Date:</strong> ${new Date(dateEvent).toLocaleString()}</p>
                     </div>
                     <div class="e-details">
-                        <p>Address: ${cityLocation}, ${nameStage}</p>
-                        <p>Estimated capacity: ${poCode}</p>
+                        <p><strong>Address:</strong> ${cityLocation}, ${nameStage}</p>
+                        <p><strong>Capacity:</strong> ${poCode}</p>
                     </div>
                     </div>
                     <div class="counter">
