@@ -3,6 +3,7 @@ import addLikeDom from './modules/addLikeDom.js';
 import showEvents from './modules/showEvents.js';
 import showEventsCount from './modules/showEventsCount.js';
 import showLikesDom from './modules/showLikesDom.js';
+import postReserve from './modules/addReservation.js';
 import './styles/reset.css';
 import './styles/style.css';
 
@@ -24,3 +25,5 @@ getLikes().then((likes) => {
 eventsList.addEventListener('click', (e) => {
   if (e.target.matches('.fa-heart')) addLikeDom(e);
 });
+
+window.postReserve = postReserve;

@@ -13,12 +13,15 @@ const showReservation = async (obj, id) => {
     },
   } = obj;
 
-  const reserData = await getReservations(id);
   let reserDates = '';
 
-  reserData.forEach((element) => {
-    reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
-  });
+  const reserData = await getReservations(id);
+
+  if (reserData.error === undefined) {
+    reserData.forEach((element) => {
+      reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
+    });
+  }
 
   const div = document.createElement('div');
   div.className = 'popup';
@@ -45,18 +48,18 @@ const showReservation = async (obj, id) => {
                     </div>
                     <div class="counter">
                     <h3> Reservations (3)</h3>
-                    <div class="reservations-p">
+                    <div class="reservations-p" id="divReservation">
                         ${reserDates}
                     </div>
                     </div>
                     <div class="form-f">
                     <label>Name</label>
-                    <input type="text" placeholder="Your name..." name="" id="">
+                    <input type="text" placeholder="Your name..." name="" id="name-reserve">
                     <label>Start</label>
-                    <input type="text" placeholder="Start date..." name="" id="">
+                    <input type="text" placeholder="Start date..." name="" id="start">
                     <label>End</label>
-                    <input type="text" placeholder="End date..." name="" id="">
-                    <input type="submit" value="Reserve">
+                    <input type="text" placeholder="End date..." name="" id="end">
+                    <button class="btn btn-primary" type="button" onclick="postReserve(${id})">Reserve Now</button>
                     </div>
                 </div>
                 </div>
