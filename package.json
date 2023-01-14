@@ -8,7 +8,7 @@
     "build": "webpack --mode=production",
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:js": "eslint . --ext .js",
-    "test": "jest --coverage"
+    "test": "jest --watch"
   },
   "dependencies": {
     "webpack": "^5.75.0",

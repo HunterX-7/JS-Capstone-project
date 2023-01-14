@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { APP_ID } from '../config.js';
-
 const baseUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${APP_ID}/comments`;
 
 export const addComment = (itemId, username, comment) => fetch(baseUrl, {
