@@ -10,6 +10,7 @@ const postReserve = (id) => {
   addReservations(id, name, start, end);
 
   divReser.innerHTML += `<p>${start} - ${end} by ${name}</p>`;
+
   countReservation();
 
   document.getElementById('name-reserve').value = '';
