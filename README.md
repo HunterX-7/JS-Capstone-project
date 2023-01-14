@@ -1,5 +1,14 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+  <img src="./images/placard.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+  <h2><b>Event Hub: SEAT GEEK</b></h2>
+
+</div>
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -29,7 +38,7 @@
 
 **EventHub** is a single page web application that allows users to view and interact with upcoming events.
 
- <img src="./app-demo.png" alt="app-demo" />
+ <img src="./images/app-demo.png" alt="app-demo" />
 
  </br>
 
