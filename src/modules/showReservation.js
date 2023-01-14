@@ -12,17 +12,15 @@ const showReservation = async (obj, id) => {
       postal_code: poCode,
     },
   } = obj;
-  
+
   let reserDates = '';
 
   const reserData = await getReservations(id);
 
   if (reserData.error === undefined) {
-
     reserData.forEach((element) => {
       reserDates += `<p>${element.date_start} - ${element.date_end} by ${element.username}</p>`;
     });
-    console.log(reserData);
   }
 
   const div = document.createElement('div');
