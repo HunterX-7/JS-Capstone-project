@@ -33,17 +33,17 @@ const showReservation = async (obj, id) => {
                 <div class="content">
                 <div class="container-f">
                     <div class="img-thumb">
-                    <img src="${performerImage}" alt="Event Image">
+                    <img class="img-style" src="${performerImage}" alt="Event Image">
                     </div>
                     <div class="details">
                     <h2>${shortTitle}</h2>
                     <div class="e-details">
-                        <p>Country: ${countryLocation}</p>
-                        <p>Date: ${new Date(dateEvent).toLocaleString()}</p>
+                        <p><strong>Country:</strong> ${countryLocation}</p>
+                        <p><strong>Date:</strong> ${new Date(dateEvent).toLocaleString()}</p>
                     </div>
                     <div class="e-details">
-                        <p>Address: ${cityLocation}, ${nameStage}</p>
-                        <p>Estimated capacity: ${poCode}</p>
+                        <p><strong>Address:</strong> ${cityLocation}, ${nameStage}</p>
+                        <p><strong>Capacity:</strong> ${poCode}</p>
                     </div>
                     </div>
                     <div class="counter">
@@ -55,10 +55,10 @@ const showReservation = async (obj, id) => {
                     <div class="form-f">
                     <label>Name</label>
                     <input type="text" placeholder="Your name..." name="" id="name-reserve">
-                    <label>Start</label>
-                    <input type="text" placeholder="Start date..." name="" id="start">
-                    <label>End</label>
-                    <input type="text" placeholder="End date..." name="" id="end">
+                    <label>Start Date</label>
+                    <input type="date" placeholder="Start date..." name="" id="start">
+                    <label>End Date</label>
+                    <input type="date" placeholder="End date..." name="" id="end">
                     <button class="btn btn-primary" type="button" onclick="postReserve(${id})">Reserve Now</button>
                     </div>
                 </div>
