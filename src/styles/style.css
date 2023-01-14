@@ -209,7 +209,7 @@ body {
 .popup-wrap {
   margin: 70px auto;
   padding: 20px;
-  background: lightgray;
+  background: whitesmoke;
   border-radius: 4px;
   width: 40%;
   position: relative;
@@ -217,6 +217,7 @@ body {
 
 .popup-wrap h2 {
   color: black;
+  font-size: xx-large;
 }
 
 .popup-wrap .close {
@@ -244,6 +245,10 @@ body {
   flex-direction: column;
 }
 
+.popup-wrap .img-style {
+  border-radius: 5px;
+}
+
 .popup-wrap .e-details {
   display: flex;
   justify-content: space-between;
@@ -265,18 +270,18 @@ body {
 }
 
 .container-f {
-  background-color: lightgray;
+  background-color: whitesmoke;
   padding: 20px 0;
   border-radius: 5px;
 }
 
 .form-f label {
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
 }
 
 .form-f input[type=text],
+input[type=date],
 select {
   padding: 12px;
   border: 1px solid #ccc;
